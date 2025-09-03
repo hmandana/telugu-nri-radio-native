@@ -51,7 +51,6 @@
       "display": "standalone",
       "orientation": "portrait",
       "bundler": "metro",
-      "output": "static",
       "template": "./web/index.html",
       "build": {
         "babel": {
