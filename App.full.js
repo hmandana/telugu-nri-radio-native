@@ -3,21 +3,23 @@ import { StatusBar } from 'expo-status-bar';
 import { View, StyleSheet } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from './src/contexts/ThemeContext';
+import { PlayerProvider } from './src/contexts/PlayerContext';
 import AppNavigator from './src/navigation/AppNavigator';
-import ErrorBoundary from './src/components/ErrorBoundary';
+import Player from './src/components/Player';
 
 export default function App() {
   return (
-    <ErrorBoundary>
-      <SafeAreaProvider>
-        <ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <PlayerProvider>
           <View style={styles.container}>
             <AppNavigator />
+            <Player />
             <StatusBar style="auto" />
           </View>
-        </ThemeProvider>
-      </SafeAreaProvider>
-    </ErrorBoundary>
+        </PlayerProvider>
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
 

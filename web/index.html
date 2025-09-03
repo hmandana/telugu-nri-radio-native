@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+  <!-- 
+    This viewport disables zooming which is necessary to avoid the viewport 
+    changing the size when a user rotates their phone.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Telugu NRI Radio - Listen to Telugu Music Online</title>
+  <meta name="description" content="Telugu NRI Radio - Your favorite Telugu radio station streaming the best Telugu music 24/7. Listen to latest Telugu hits, classics, and more." />
+  <meta name="keywords" content="Telugu Radio, NRI Radio, Telugu Music, Online Radio, Telugu Songs, Indian Radio" />
+  <meta name="author" content="HMV Entertainment" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+  <link rel="apple-touch-icon" href="./assets/icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon.png" />
+
+  <!-- Theme and PWA -->
+  <meta name="theme-color" content="#ff6b35" />
+  <meta name="msapplication-TileColor" content="#ff6b35" />
+  <meta name="msapplication-config" content="./browserconfig.xml" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourusername.github.io/telugu-nri-radio-native/" />
+  <meta property="og:title" content="Telugu NRI Radio - Listen to Telugu Music Online" />
+  <meta property="og:description" content="Your favorite Telugu radio station streaming the best Telugu music 24/7. Listen to latest Telugu hits, classics, and more." />
+  <meta property="og:image" content="./assets/icon.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://yourusername.github.io/telugu-nri-radio-native/" />
+  <meta property="twitter:title" content="Telugu NRI Radio - Listen to Telugu Music Online" />
+  <meta property="twitter:description" content="Your favorite Telugu radio station streaming the best Telugu music 24/7. Listen to latest Telugu hits, classics, and more." />
+  <meta property="twitter:image" content="./assets/icon.png" />
+
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="./manifest.json" />
+
+  <!-- Preload key resources -->
+  <link rel="preload" href="./assets/icon.png" as="image" type="image/png" />
+
+  <style>
+    /**
+     * Building on the RNWeb reset:
+     * https://github.com/necolas/react-native-web/blob/master/packages/react-native-web/src/exports/StyleSheet/initialRules.js
+     */
+    html, body, #root {
+      width: 100%;
+      /* To smooth any scrolling behavior */
+      -webkit-overflow-scrolling: touch;
+      margin: 0px;
+      padding: 0px;
+      /* Allows content to fill the viewport and go beyond the bottom */
+      min-height: 100%;
+    }
+    #root {
+      flex-shrink: 0;
+      flex-basis: auto;
+      flex-grow: 1;
+      display: flex;
+      flex: 1;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      /* Prevent text size change on orientation change https://gist.github.com/tfausak/2222823#file-ios-8-web-app-html-L138 */
+      -webkit-text-size-adjust: 100%;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      /* Allows you to scroll below the viewport; default value is visible */
+      overflow-y: auto;
+      overscroll-behavior-y: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -ms-overflow-style: scrollbar;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      background-color: #ff6b35;
+    }
+
+    /* Loading screen */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ff6b35;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: white;
+    }
+
+    #loading-screen img {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 20px;
+      border-radius: 20px;
+    }
+
+    #loading-screen h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+      text-align: center;
+    }
+
+    #loading-screen p {
+      font-size: 16px;
+      margin: 0;
+      opacity: 0.9;
+      text-align: center;
+    }
+
+    /* Spinner animation */
+    .spinner {
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top: 3px solid white;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin-top: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <img src="./assets/icon.png" alt="Telugu NRI Radio Logo" />
+    <h1>Telugu NRI Radio</h1>
+    <p>Loading your favorite Telugu music...</p>
+    <div class="spinner"></div>
+  </div>
+
+  <!-- 
+    A generic no script element with a reload button and a message.
+    Feel free to customize this however you'd like.
+  -->
+  <noscript>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background-color: #ff6b35; color: white; font-family: sans-serif; text-align: center; padding: 20px;">
+      <img src="./assets/icon.png" alt="Telugu NRI Radio Logo" style="width: 120px; height: 120px; margin-bottom: 20px; border-radius: 20px;" />
+      <h1>Telugu NRI Radio</h1>
+      <p>JavaScript is required to run this application.</p>
+      <p>Please enable JavaScript in your browser and reload the page.</p>
+      <button onclick="location.reload()" style="background-color: white; color: #ff6b35; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 20px;">
+        Reload Page
+      </button>
+    </div>
+  </noscript>
+  
+  <!-- The root element for your Expo app. -->
+  <div id="root"></div>
+
+  <script>
+    // Hide loading screen when app is ready
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          loadingScreen.style.opacity = '0';
+          loadingScreen.style.transition = 'opacity 0.5s ease-out';
+          setTimeout(function() {
+            loadingScreen.style.display = 'none';
+          }, 500);
+        }
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

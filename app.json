@@ -1,29 +1,72 @@
 {
   "expo": {
-    "name": "telugu-nri-radio-native",
+    "name": "Telugu NRI Radio",
     "slug": "telugu-nri-radio-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "backgroundColor": "#ff6b35",
+    "primaryColor": "#ff6b35",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ff6b35"
     },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hmventertainment.telugunriradio",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "UIBackgroundModes": ["audio"]
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#ff6b35"
       },
-      "edgeToEdgeEnabled": true
+      "package": "com.hmventertainment.telugunriradio",
+      "versionCode": 1,
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "WAKE_LOCK",
+        "FOREGROUND_SERVICE"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "name": "Telugu NRI Radio",
+      "shortName": "TNR Radio",
+      "lang": "en",
+      "scope": "/",
+      "themeColor": "#ff6b35",
+      "backgroundColor": "#ff6b35",
+      "display": "standalone",
+      "orientation": "portrait",
+      "bundler": "metro",
+      "output": "static",
+      "template": "./web/index.html",
+      "build": {
+        "babel": {
+          "include": [
+            "@expo/vector-icons"
+          ]
+        }
+      },
+      "meta": {
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "theme-color": "#ff6b35"
+      }
+    },
+    "plugins": [
+      "expo-av"
+    ]
   }
 }

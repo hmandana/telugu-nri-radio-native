@@ -1,0 +1,40 @@
+{
+  "name": "Telugu NRI Radio - Listen to Telugu Music Online",
+  "short_name": "Telugu NRI Radio",
+  "description": "Your favorite Telugu radio station streaming the best Telugu music 24/7. Listen to latest Telugu hits, classics, and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ff6b35",
+  "background_color": "#ff6b35",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "./assets/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["music", "entertainment", "multimedia"],
+  "screenshots": [],
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.hmventertainment.telugunriradio"
+    }
+  ]
+}
